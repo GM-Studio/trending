@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gm.trending</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>eureka-server</module>
+        <module>thrid-part-index-data</module>
+        <module>data-collection-storage</module>
+        <module>index-code</module>
+        <module>index-data</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <!-- 全局版本变量  -->
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.1.13.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.SR5</spring-cloud.version>
+        <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>
+        <fastjson.version>1.2.62</fastjson.version>
+        <swagger.version>2.8.0</swagger.version>
+        <mybatis.starter.version>2.1.1</mybatis.starter.version>
+        <spring.boot.admin.version>2.1.2</spring.boot.admin.version>
+        <nacos.config.sprng.boot.version>0.2.1</nacos.config.sprng.boot.version>
+        <mysql.version>5.1.48</mysql.version>
+        <druid.version>1.1.10</druid.version>
+        <eureka.version>2.0.2.RELEASE</eureka.version>
+        <openfeign.version>2.1.1.RELEASE</openfeign.version>
+        <zipkin.version>2.1.7.RELEASE</zipkin.version>
+        <config.version>2.1.3.RELEASE</config.version>
+        <sleuth.version>2.1.2.RELEASE</sleuth.version>
+        <hystrix.version>2.1.0.RELEASE</hystrix.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <hutool.version>5.0.7</hutool.version>
+        <redis.version>2.1.6.RELEASE</redis.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring.boot.admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-alibaba-dependencies</artifactId>-->
+<!--                <version>${spring.cloud.alibaba.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; https://mvnrepository.com/artifact/com.alibaba/fastjson &ndash;&gt;-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+<!--            &lt;!&ndash;swagger2 &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>io.springfox</groupId>-->
+<!--                <artifactId>springfox-swagger2</artifactId>-->
+<!--                <version>${swagger.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>io.springfox</groupId>-->
+<!--                <artifactId>springfox-swagger-ui</artifactId>-->
+<!--                <version>${swagger.version}</version>-->
+<!--            </dependency>-->
+
+            <!-- nacos -->
+            <!--            <dependency>-->
+            <!--                <groupId>com.alibaba.boot</groupId>-->
+            <!--                <artifactId>nacos-config-spring-boot-starter</artifactId>-->
+            <!--                <version>${nacos.config.spring.boot.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            <dependency>-->
+            <!--                <groupId>com.alibaba.boot</groupId>-->
+            <!--                <artifactId>nacos-config-spring-boot-actuator</artifactId>-->
+            <!--                <version>${nacos-config-spring-boot.version}</version>-->
+            <!--            </dependency>-->
+
+<!--            &lt;!&ndash; mybatis &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>org.mybatis.spring.boot</groupId>-->
+<!--                <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--                <version>${mybatis.starter.version}</version>-->
+<!--            </dependency>-->
+
+            <!--web -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+<!--            &lt;!&ndash; druid &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba</groupId>-->
+<!--                <artifactId>druid</artifactId>-->
+<!--                <version>${druid.version}</version>-->
+<!--            </dependency>-->
+
+            <!--eureka server-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+
+            <!--eureka client-->
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-starter-openfeign</artifactId>-->
+<!--                <version>${openfeign.version}</version>-->
+<!--            </dependency>-->
+
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.cloud</groupId>-->
+            <!--                <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+            <!--                <version>2.1.2.RELEASE</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-zipkin &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.cloud</groupId>-->
+            <!--                <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+            <!--                <version>2.2.3.RELEASE</version>-->
+            <!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+<!--                <version>${zipkin.version}</version>-->
+<!--            </dependency>-->
+
+
+<!--            &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-server &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-config-server</artifactId>-->
+<!--                <version>${config.version}</version>-->
+<!--            </dependency>-->
+
+<!--            &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-sleuth &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-starter-sleuth</artifactId>-->
+<!--                <version>${sleuth.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-sleuth-zipkin</artifactId>-->
+<!--                <version>${zipkin.version}</version>-->
+<!--            </dependency>-->
+
+<!--            &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-hystrix &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
+<!--                <version>${hystrix.version}</version>-->
+<!--            </dependency>-->
+
+            <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${redis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <optional>true</optional>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-quartz</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+
+
+</project>
