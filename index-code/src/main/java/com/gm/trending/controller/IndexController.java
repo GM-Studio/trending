@@ -25,6 +25,7 @@ public class IndexController {
     @RequestMapping(value = "/IndexesCodes",method = RequestMethod.GET)
     public Object getIndexes()
     {
+        logger.debug("端口为8002的服务响应请求");
         logger.info("获取指数数据");
         return indexService.getIndexCode();
     }
