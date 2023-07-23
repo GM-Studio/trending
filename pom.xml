@@ -35,7 +35,7 @@
         <eureka.version>2.0.2.RELEASE</eureka.version>
         <openfeign.version>2.1.1.RELEASE</openfeign.version>
         <zipkin.version>2.1.7.RELEASE</zipkin.version>
-        <config.version>2.1.3.RELEASE</config.version>
+        <config.version>2.2.0.RELEASE</config.version>
         <sleuth.version>2.1.2.RELEASE</sleuth.version>
         <hystrix.version>2.1.0.RELEASE</hystrix.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
